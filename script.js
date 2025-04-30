@@ -11,10 +11,13 @@ document.querySelectorAll('.ripple').forEach(elem => {
   });
 });
 
-
+//Удаляем ripple-элементы перед скачиванием PDF
 const downloadBtn = document.getElementById('download-btn');
 if (downloadBtn) {
   downloadBtn.addEventListener('click', () => {
+    //Удаляем ripple-эффекты перед экспортом
+    document.querySelectorAll('.ripple-effect').forEach(el => el.remove());
+
     const element = document.querySelector('.resume-container');
     const opt = {
       margin:       0.5,
@@ -27,7 +30,6 @@ if (downloadBtn) {
   });
 }
 
-// Save editable content in localStorage
 const editableFields = document.querySelectorAll('.editable');
 editableFields.forEach((el, i) => {
   const fieldKey = `editableField-${i}`;
