@@ -1,41 +1,70 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 20px;
-  background: #f5f5f5;
+  background: linear-gradient(135deg, #e0bbf7, #d3a9f7); 
   margin: 0;
 }
 
 .resume-container {
-  background: white;
+  background: #fff;
   padding: 30px;
   border-radius: 12px;
   max-width: 600px;
   margin: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.resume-container:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Глубже тень при наведении */
+}
+
+h1, h2 {
+  color: #333;
+  font-weight: bold;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+h1:hover, h2:hover {
+  color: #1976d2;
 }
 
 .editable {
+  font-size: 1.2em;
   transition: background-color 0.3s ease;
-  padding: 4px;
+  padding: 6px 12px;
   border-radius: 6px;
+  border: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .editable:focus {
   background-color: #e3f2fd;
   outline: none;
+  border-color: #1976d2;
 }
 
 button {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1em;
+  padding: 12px 24px;
+  font-size: 1.2em;
   border: none;
-  background-color: #1976d2;
+  background-color: #9c27b0; /* Фиолетовый цвет кнопки */
   color: white;
   border-radius: 8px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #7b1fa2; /* Темнее фиолетовый при наведении */
+  transform: scale(1.05); /* Легкое увеличение кнопки */
 }
 
 .ripple-effect {
