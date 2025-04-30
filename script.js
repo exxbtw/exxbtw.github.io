@@ -1,7 +1,7 @@
-// Ripple effect
+// Ripple effect (фиксированная позиция и центрирование)
 document.querySelectorAll('.ripple').forEach(elem => {
+  elem.style.position = 'relative'; // Важно для позиционирования ripple внутри
   elem.addEventListener('click', function (e) {
-    if (this.querySelector('.ripple-effect')) return;
     const circle = document.createElement('span');
     circle.classList.add('ripple-effect');
     circle.style.left = `${e.offsetX}px`;
@@ -11,11 +11,19 @@ document.querySelectorAll('.ripple').forEach(elem => {
   });
 });
 
-// Download as PDF using browser print as fallback
+
 const downloadBtn = document.getElementById('download-btn');
 if (downloadBtn) {
   downloadBtn.addEventListener('click', () => {
-    window.print();
+    const element = document.querySelector('.resume-container');
+    const opt = {
+      margin:       0.5,
+      filename:     'resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
   });
 }
 
