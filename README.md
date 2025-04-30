@@ -1,5 +1,5 @@
 # Сайт для быстрого и удобного создания резюме
-- exxbtw.github.io
+- [exxbtw.github.io](https://exxbtw.github.io/)
 
 ## Функции
 
